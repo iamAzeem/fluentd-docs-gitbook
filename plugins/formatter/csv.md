@@ -1,6 +1,6 @@
-# csv Formatter Plugin
+# `csv` Formatter Plugin
 
-The `csv` formatter plugin output an event as CSV.
+The `csv` formatter plugin outputs an event as CSV.
 
 ```
 "value1"[delimiter]"value2"[delimiter]"value3"\n
@@ -10,19 +10,19 @@ The `csv` formatter plugin output an event as CSV.
 ## Parameters
 
 -   [Common Parameters](/configuration/plugin-common-parameters.md)
--   [Format section configurations](/configuration/format-section.md)
+-   [Format Section Configurations](/configuration/format-section.md)
 
 
-### fields
+### `fields`
 
 | type            | default            | version |
 |:----------------|:-------------------|:--------|
 | array of string | required parameter | 0.14.0  |
 
-Specify output fields
+Specifies the output fields.
 
 
-### delimiter (String, Optional. defaults to ",")
+### `delimiter` (String, Optional. defaults to ",")
 
 | type   | default | version |
 |:-------|:--------|:--------|
@@ -33,25 +33,27 @@ Delimiter for values.
 Use `\t` or `TAB` to specify tab character.
 
 
-### force\_quotes
+### `force_quotes`
 
 | type | default | version |
 |:-----|:--------|:--------|
-| bool | true    | 0.14.0  |
+| bool | `true`  | 0.14.0  |
 
-If false, value won't be framed by quotes.
+If `false`, value won't be framed by quotes.
 
 
-### add\_newline
+### `add_newline`
 
 | type | default | version |
 |:-----|:--------|:--------|
-| bool | true    | 0.14.12 |
+| bool | `true`  | 0.14.12 |
 
-Add `\n` to the result.
+Adds `\n` to the result.
 
 
 ## Example
+
+With this configuration:
 
 ```
 <format>
@@ -60,7 +62,7 @@ Add `\n` to the result.
 </format>
 ```
 
-With this configuration:
+The following input
 
 ```
 tag:    app.event
@@ -68,7 +70,7 @@ time:   1362020400
 record: {"host":"192.168.0.1","size":777,"method":"PUT"}
 ```
 
-This incoming event is formatted to:
+is formatted to:
 
 ```
 "192.168.0.1","PUT"\n
@@ -83,5 +85,8 @@ With `force_quotes false`, the result is:
 
 ------------------------------------------------------------------------
 
-If this article is incorrect or outdated, or omits critical information, please [let us know](https://github.com/fluent/fluentd-docs-gitbook/issues?state=open).
-[Fluentd](http://www.fluentd.org/) is a open source project under [Cloud Native Computing Foundation (CNCF)](https://cncf.io/). All components are available under the Apache 2 License.
+If this article is incorrect or outdated, or omits critical information, please
+[let us know](https://github.com/fluent/fluentd-docs-gitbook/issues?state=open).
+[Fluentd](http://www.fluentd.org/) is an open-source project under [Cloud Native
+Computing Foundation (CNCF)](https://cncf.io/). All components are available
+under the Apache 2 License.
